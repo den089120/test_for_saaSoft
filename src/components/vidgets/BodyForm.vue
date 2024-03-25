@@ -12,7 +12,27 @@ const typeString = ref<string>('')
 const login = ref<string>('')
 const password = ref<string>('')
 
+
+
 const submitUser = function (): void {
+  const obj = []
+  metka.value.split(';').forEach((el) => {
+    obj.push({text: el})
+  })
+
+  const user = {
+    id: Date.now().toString(),
+    MetkaArray: obj,
+    TypeString: typeString.value,
+    Login: login.value,
+    Password: password.value
+  }
+  userStore.addMyUser(user)
+  metka.value = ''
+  typeString.value = ''
+  login.value = ''
+  password.value = ''
+
   userStore.changeAddUser(false)
 }
 const helpFunc = function (arr: Array<MetkaElement>): string {

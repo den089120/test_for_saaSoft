@@ -69,8 +69,11 @@ export const useUserStore = defineStore( {
     deleteUser (id: string): void {
       this.users = this.users.filter((el) => el.id !== id)
     },
-    changeAddUser (value: boolean) {
+    changeAddUser (value: boolean): void {
       this.addUser = value
+    },
+    addMyUser (user): void {
+      this.users.push(user)
     }
   },
 })
