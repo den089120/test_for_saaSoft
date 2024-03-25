@@ -14,7 +14,7 @@ interface User {
   Password: string;
 }
 
-interface MetkaElement {
+export interface MetkaElement {
   text: string;
 }
 
@@ -29,7 +29,35 @@ export const useUserStore = defineStore( {
           MetkaArray: [
             {text: 'XXXX'}
           ],
-          TypeString: 'локальная',
+          TypeString: 'Локальная',
+          Login: 'ae@mail.ru',
+          Password: '22222'
+        },
+        {
+          id: '2',
+          MetkaArray: [
+            {text: 'XXXX'},
+            {text: 'YYYY'}
+          ],
+          TypeString: 'Локальная',
+          Login: 'ae@mail.ru',
+          Password: '22222'
+        },
+        {
+          id: '3',
+          MetkaArray: [
+            {text: 'OOOOOOO'}
+          ],
+          TypeString: 'LDAP',
+          Login: 'ae@mail.ru',
+          Password: '22222'
+        },
+        {
+          id: '4',
+          MetkaArray: [
+            {text: 'XXXX'}
+          ],
+          TypeString: 'LDAP',
           Login: 'ae@mail.ru',
           Password: '22222'
         },
