@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
 import IconHelp from "@/components/icons/IconHelp.vue";
+
 </script>
 
 <template>

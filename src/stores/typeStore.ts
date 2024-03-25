@@ -1,5 +1,6 @@
 export interface UserState {
-    users: Array<User>
+    users: Array<User>;
+    addUser: boolean;
 }
 
 interface User {
@@ -11,5 +12,5 @@ interface User {
 }
 
 interface MetkaElement {
-    text: string
+    text: string;
 }

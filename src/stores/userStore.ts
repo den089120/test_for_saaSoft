@@ -1,5 +1,22 @@
 import { defineStore } from 'pinia'
-import {UserState} from "@/stores/typeStore";
+// import { UserState } from "./typeStore"
+
+export interface UserState {
+  users: Array<User>;
+  addUser: boolean;
+}
+
+interface User {
+  id: string;
+  MetkaArray?: Array<MetkaElement>;
+  TypeString: string;
+  Login: string;
+  Password: string;
+}
+
+interface MetkaElement {
+  text: string;
+}
 
 
 export const useUserStore = defineStore( {
@@ -17,11 +34,15 @@ export const useUserStore = defineStore( {
           Password: '22222'
         },
       ],
+      addUser: false
     }
   },
   actions: {
     deleteUser (id: string): void {
       this.users = this.users.filter((el) => el.id !== id)
+    },
+    changeAddUser (value: boolean) {
+      this.addUser = value
     }
   },
 })
